@@ -93,7 +93,7 @@ body {
   }
 }
 
-/* Avatar styles for testimonials */
+/* Styles d'avatar pour les témoignages */
 .avatar-img {
   width: 48px;
   height: 48px;
@@ -112,7 +112,7 @@ body {
   }
 }
 
-/* Enhanced testimonial styles */
+/* Styles de témoignages améliorés */
 .testimonial-card {
   background: white;
   border-radius: 12px;
@@ -136,7 +136,7 @@ body {
   }
 }
 
-/* Avatar improvements */
+/* Améliorations d'avatar */
 .testimonial-card img {
   width: 48px;
   height: 48px;
@@ -154,19 +154,19 @@ body {
   }
 }
 
-/* Quote icon styling */
+/* Style d'icône de citation */
 .testimonial-card svg {
   opacity: 0.6;
   flex-shrink: 0;
 }
 
-/* Text improvements */
+/* Améliorations de texte */
 .testimonial-card p {
   line-height: 1.6;
   margin: 0;
 }
 
-/* Stars styling */
+/* Style des étoiles */
 .testimonial-card .stars {
   color: #ffd700;
   font-size: 16px;
@@ -179,7 +179,7 @@ body {
   }
 }
 
-/* Verified badge styling */
+/* Style du badge vérifié */
 .verified-badge {
   display: inline-flex;
   align-items: center;
@@ -195,8 +195,8 @@ body {
   }
 }
 
-/* Fallback for broken images */
-img[alt*="Foto"]:not([src*="data:"]) {
+/* Fallback pour les images cassées */
+img[alt*="Photo"]:not([src*="data:"]) {
   background-color: #f3f4f6;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'/%3E%3C/svg%3E");
   background-size: 60%;
@@ -204,7 +204,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   background-position: center;
 }
 
-/* Container de depoimentos - Layout responsivo */
+/* Conteneur de témoignages - Layout responsif */
 .container-depoimentos {
   display: flex;
   gap: 16px;
@@ -213,7 +213,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   flex-wrap: nowrap;
 }
 
-/* Cards de depoimento */
+/* Cartes de témoignage */
 .depoimento-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -230,7 +230,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   transform: translateY(-2px);
 }
 
-/* Texto dos depoimentos */
+/* Texte des témoignages */
 .texto-depoimento {
   font-size: 16px;
   line-height: 1.5;
@@ -240,7 +240,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   font-weight: 400;
 }
 
-/* Nome do depoente */
+/* Nom du témoin */
 .nome-depoimento {
   font-weight: bold;
   font-size: 16px;
@@ -248,7 +248,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   margin-bottom: 2px;
 }
 
-/* Subtítulos */
+/* Sous-titres */
 .subtitulo-verificado {
   font-size: 12px;
   font-weight: 500;
@@ -264,7 +264,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   color: #2563eb;
 }
 
-/* Responsividade para mobile */
+/* Responsivité pour mobile */
 @media (max-width: 768px) {
   .container-depoimentos {
     flex-direction: column;
@@ -286,7 +286,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   }
 }
 
-/* Ajustes para tablets */
+/* Ajustements pour tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
   .container-depoimentos {
     flex-wrap: wrap;
@@ -298,14 +298,14 @@ img[alt*="Foto"]:not([src*="data:"]) {
   }
 }
 
-/* Desktop grande */
+/* Desktop grand */
 @media (min-width: 1025px) {
   .depoimento-card {
     max-width: 350px;
   }
 }
 
-/* Stepper responsivo com scroll horizontal */
+/* Stepper responsif avec scroll horizontal */
 .stepper-container {
   display: flex;
   overflow-x: auto;
@@ -324,7 +324,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   font-size: 12px;
 }
 
-/* Melhorias para touch scroll no mobile */
+/* Améliorations pour le scroll tactile sur mobile */
 @media (max-width: 768px) {
   .stepper-container {
     -webkit-overflow-scrolling: touch;
@@ -337,7 +337,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
     font-size: 12px;
   }
 
-  /* Indicador visual sutil de que é scrollável */
+  /* Indicateur visuel subtil qu'il est scrollable */
   .stepper-container::after {
     content: "";
     position: absolute;
@@ -365,19 +365,19 @@ img[alt*="Foto"]:not([src*="data:"]) {
   }
 }
 
-/* Transições suaves para os steps */
+/* Transitions fluides pour les étapes */
 .stepper-step span {
   transition: all 0.3s ease;
 }
 
-/* Hover effect apenas no desktop */
+/* Effet hover uniquement sur desktop */
 @media (min-width: 769px) {
   .stepper-step:hover span {
     transform: scale(1.05);
   }
 }
 
-/* Garantir que o conteúdo não seja cortado */
+/* S'assurer que le contenu ne soit pas coupé */
 .stepper-step {
   display: flex;
   align-items: center;
@@ -385,7 +385,7 @@ img[alt*="Foto"]:not([src*="data:"]) {
   white-space: nowrap;
 }
 
-/* Melhorar a legibilidade dos textos */
+/* Améliorer la lisibilité des textes */
 @media (max-width: 640px) {
   .stepper-step span {
     font-size: 11px;

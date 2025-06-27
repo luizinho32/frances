@@ -5,21 +5,21 @@ export async function POST(request: NextRequest) {
     const { phone } = await request.json()
 
     if (!phone) {
-      return NextResponse.json({ success: false, error: "Número de telefone é obrigatório" }, { status: 400 })
+      return NextResponse.json({ success: false, error: "Le numéro de téléphone est obligatoire" }, { status: 400 })
     }
 
-    // Remove caracteres não numéricos
+    // Supprime les caractères non numériques
     const cleanPhone = phone.replace(/[^0-9]/g, "")
 
-    // Adiciona código do país se não tiver (assumindo Brasil +55)
+    // Ajoute le code pays si absent (en supposant la France +33)
     let fullNumber = cleanPhone
-    if (!cleanPhone.startsWith("55") && cleanPhone.length === 11) {
-      fullNumber = "55" + cleanPhone
+    if (!cleanPhone.startsWith("33") && cleanPhone.length === 10) {
+      fullNumber = "33" + cleanPhone.substring(1) // Retire le 0 initial pour la France
     }
 
-    console.log("Buscando foto para número:", fullNumber)
+    console.log("Recherche de photo pour le numéro:", fullNumber)
 
-    // Faz requisição para a API externa
+    // Fait une requête à l'API externe
     const apiUrl = `https://primary-production-aac6.up.railway.app/webhook/request_photo?tel=${fullNumber}`
 
     const response = await fetch(apiUrl, {
@@ -31,13 +31,13 @@ export async function POST(request: NextRequest) {
     })
 
     if (!response.ok) {
-      throw new Error(`API retornou status: ${response.status}`)
+      throw new Error(`L'API a retourné le statut: ${response.status}`)
     }
 
     const data = await response.json()
-    console.log("Resposta da API:", data)
+    console.log("Réponse de l'API:", data)
 
-    // Verifica se a foto é privada ou padrão
+    // Vérifie si la photo est privée ou par défaut
     const isPhotoPrivate = !data.link || data.link === null || data.link.includes("no-user-image-icon")
 
     return NextResponse.json({
@@ -48,12 +48,12 @@ export async function POST(request: NextRequest) {
       is_photo_private: isPhotoPrivate,
     })
   } catch (error) {
-    console.error("Erro na API WhatsApp:", error)
+    console.error("Erreur dans l'API WhatsApp:", error)
 
     return NextResponse.json(
       {
         success: false,
-        error: "Erro ao buscar foto do perfil",
+        error: "Erreur lors de la recherche de la photo de profil",
       },
       { status: 500 },
     )
